@@ -75,12 +75,16 @@ DATABASE_URL=postgresql://username:password@localhost:5432/membership_db
 psql -d membership_db -f triggers.sql
 ```
 
-**If using Supabase the copy the code from triggers.sql and run it on SQL Editor on supabase**
+**If using Supabase then copy the code from triggers.sql and run it on SQL Editor on supabase**
 
 ### 7. Run Application
 
 ```bash
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+```
+### or using this file
+```bash
+python ./run.py
 ```
 
 ## API Documentation
@@ -228,21 +232,3 @@ The API properly handles errors:
 - **400** - Bad request (e.g., duplicate phone)
 - **403** - Forbidden (e.g., no active subscription)
 - **422** - Validation error
-
-## Development
-
-### Run with Auto-Reload
-
-```bash
-uvicorn app.main:app --reload
-```
-### or using this file
-```bash
-python ./run.py
-```
-
-### Run Tests (Not specified but will push them in repo)
-
-```bash
-pytest
-```
