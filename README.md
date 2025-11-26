@@ -55,6 +55,7 @@ pip install -r requirements.txt
 ```bash
 createdb membership_db
 ```
+**Or create on supabase - **https://supabase.com/
 
 **Or use existing database** - update .env file
 
@@ -66,10 +67,6 @@ Create `.env` file:
 DATABASE_URL=postgresql://username:password@localhost:5432/membership_db
 ```
 
-For SQLite (alternative):
-```env
-DATABASE_URL=sqlite:///./membership.db
-```
 
 ### 6. Apply Database Trigger
 
@@ -78,10 +75,7 @@ DATABASE_URL=sqlite:///./membership.db
 psql -d membership_db -f triggers.sql
 ```
 
-**SQLite:**
-```bash
-sqlite3 membership.db < sqlite_trigger.sql
-```
+**If using Supabase the copy the code from triggers.sql and run it on SQL Editor on supabase**
 
 ### 7. Run Application
 
